@@ -1,0 +1,40 @@
+@import 'abstracts/abstracts-dir';
+@import 'components/components-dir';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.App {
+    height: 100%;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $black;
+}
+
+a {
+    text-decoration: none;
+    color: $green;
+}
+
+.App {
+    width: 96%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 5rem 1fr 5rem;
+
+    @media (min-width: 980px) {
+        width: 80%;
+    }
+}

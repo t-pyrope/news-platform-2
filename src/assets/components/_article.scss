@@ -1,0 +1,19 @@
+.article {
+    border-bottom: 1px solid rgb(209, 209, 209);
+    padding: 1rem 0rem;
+    &__body {
+        padding: 1rem 0rem;
+    }
+    &__paragraph {
+        margin-bottom: 1rem;
+        line-height: 1.3rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &_main {
+        border-bottom: none;
+    }
+}

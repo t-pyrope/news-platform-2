@@ -1,0 +1,13 @@
+.mainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+        color: $black;
+    }
+
+    &__link {
+        margin-left: 1rem;
+    }
+}

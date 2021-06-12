@@ -1,0 +1,21 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__input {
+        height: 2rem;
+        margin-bottom: 1rem;
+        padding: 0rem 0.2rem;
+    }
+
+    &__button {
+        padding: 0.5rem 1rem;
+        background-color: $blue;
+        font-weight: bolder;
+        color: white;
+        border: none;
+        border-radius: 5%;
+        text-transform: uppercase;
+    }
+}

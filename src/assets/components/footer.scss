@@ -1,0 +1,13 @@
+.mainFooter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__link {
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-right: 0rem;
+        }
+    }
+}
