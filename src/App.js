@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import News from './pages/News';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+import Page404 from './pages/Page404';
 import './assets/main.scss';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <div className='App'>
             <Header />
             <Switch location={location} key={location.pathname}>
-                <Route path='/' exact>
+                <Route path='/news-platform' exact>
                     <HomePage />
                 </Route>
                 <Route path='/news'>
@@ -25,6 +26,9 @@ function App() {
                 </Route>
                 <Route path='/login'>
                     <Login />
+                </Route>
+                <Route>
+                    <Page404 />
                 </Route>
             </Switch>
             <Footer />
