@@ -1,12 +1,13 @@
-# News Platform
+# News Platform II
 
-This is a solution for [the first test assignment (in Russian)](https://vk.com/@maxpfrontend-testovoe-zadanie-1) from [maxfrontend](https://maxpfrontend.ru/) that checks basic skills of react, redux and react-router.
+This is a solution for [the second test assignment (in Russian)](https://vk.com/@maxpfrontend-testovoe-zadanie-2) from [maxfrontend](https://maxpfrontend.ru/) that checks levels of react, redux and react-router skills of participant.
 
-Check [the analysis of solutions and the author's solution on Youtube](https://www.youtube.com/watch?v=BMD1JjZf7WA&t=1s)
+Check [the analysis of solutions](https://vk.com/@maxpfrontend-razbor-testovogo-zadaniya-2)
 
-The author's also got [the second test assignment](https://vk.com/@maxpfrontend-testovoe-zadanie-2)
+[The first test assignment](https://vk.com/@maxpfrontend-testovoe-zadanie-1)
+[The analysis of solutions of the first assignment and the author's solution on Youtube](https://www.youtube.com/watch?v=BMD1JjZf7WA&t=1s)
 
-https://codepen.io/OTomer
+I use skeleton of [Tomer Ovadia](https://codepen.io/OTomer)
 
 ### Usage
 ```

@@ -113,7 +113,8 @@ const Profile = () => {
                                                 >
                                                     <a
                                                         href={social.link}
-                                                        target='blank'
+                                                        target='_blank'
+                                                        rel='noopener noreferrer'
                                                     >
                                                         <img
                                                             src={iconHandler(

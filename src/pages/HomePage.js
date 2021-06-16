@@ -9,38 +9,52 @@ const HomePage = () => {
                     <p className='article__paragraph'>
                         This is a solution for{' '}
                         <a
-                            href='https://vk.com/@maxpfrontend-testovoe-zadanie-1'
-                            target='blank'
+                            href='https://vk.com/@maxpfrontend-testovoe-zadanie-2'
+                            target='_blank'
+                            rel='noopener noreferrer'
                         >
-                            a test assignment (in Russian)
+                            the second test assignment (in Russian)
                         </a>{' '}
-                        to check the basic skills of react, redux and
-                        react-router.
+                        that checks levels of react, redux and react-router
+                        skills of the participant
                     </p>
                     <p className='article__paragraph'>
                         Check{' '}
                         <a
-                            href='https://www.youtube.com/watch?v=BMD1JjZf7WA&t=1s'
-                            target='blank'
+                            href='https://vk.com/@maxpfrontend-razbor-testovogo-zadaniya-2'
+                            target='_blank'
+                            rel='noopener noreferrer'
                         >
-                            the analysis of solutions and author's solution
+                            the analysis of solutions
                         </a>{' '}
-                        on Youtube
+                        from the author
                     </p>
                     <p className='article__paragraph'>
-                        You can find{' '}
                         <a
-                            href='https://vk.com/@maxpfrontend-testovoe-zadanie-2'
-                            target='blank'
+                            href='https://vk.com/@maxpfrontend-testovoe-zadanie-1'
+                            target='_blank'
+                            rel='noopener noreferrer'
                         >
-                            a second test assignment
+                            The first test assignment
+                        </a>{' '}
+                        from the same author
+                    </p>
+                    <p className='article__paragraph'>
+                        <a
+                            href={`https://www.youtube.com/watch?v=BMD1JjZf7WA&t=1s`}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                        >
+                            The analysis of solutions of the first assignment
+                            and the author's solution on Youtube
                         </a>{' '}
                         from the same author
                     </p>
                     <p className='article__paragraph'>
                         <a
                             href='https://vk.com/@maxpfrontend-testovoe-zadanie-2'
-                            target='blank'
+                            target='_blank'
+                            rel='noopener noreferrer'
                         >
                             A github repository
                         </a>{' '}
