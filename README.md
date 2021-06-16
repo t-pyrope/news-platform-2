@@ -12,8 +12,8 @@ I use skeleton of [Tomer Ovadia](https://codepen.io/OTomer)
 
 ### Usage
 ```
-git clone https://github.com/t-pyrope/news-platform.git
-cd news-platform
+git clone https://github.com/t-pyrope/news-platform-2.git
+cd news-platform-2
 npm install
 ```
 ### Running the website in the development mode
