@@ -33,18 +33,23 @@ const Profile = () => {
 
     useEffect(() => {
         if (id) {
-            axios.get(getUserDataUrl(id)).then((res) => {
-                if (res.data.status === 'ok') {
-                    localStorage.clear();
-                    localStorage.setItem(
-                        'userData',
-                        JSON.stringify(res.data.data),
-                    );
-                }
-                if (res.data.status === 'err') {
-                    dispatch(handleError(res.data.message));
-                }
-            });
+            axios
+                .get(getUserDataUrl(id))
+                .then((res) => {
+                    if (res.data.status === 'ok') {
+                        localStorage.clear();
+                        localStorage.setItem(
+                            'userData',
+                            JSON.stringify(res.data.data),
+                        );
+                    }
+                    if (res.data.status === 'err') {
+                        dispatch(handleError(res.data.message));
+                    }
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
             const data = JSON.parse(localStorage.getItem('userData'));
             setUserData(data);
         }

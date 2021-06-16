@@ -75,7 +75,10 @@ const Login = () => {
                         className='form__input'
                     />
                 </div>
-                <button className='form__button' disabled={isLoading}>
+                <button
+                    className='form__button'
+                    disabled={isLoading || !password || emailErr}
+                >
                     {isLoading ? 'Checking...' : 'Submit'}
                 </button>
             </form>
