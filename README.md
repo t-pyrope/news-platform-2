@@ -5,6 +5,7 @@ This is a solution for [the second test assignment (in Russian)](https://vk.com/
 Check [the analysis of solutions](https://vk.com/@maxpfrontend-razbor-testovogo-zadaniya-2)
 
 [The first test assignment](https://vk.com/@maxpfrontend-testovoe-zadanie-1)
+
 [The analysis of solutions of the first assignment and the author's solution on Youtube](https://www.youtube.com/watch?v=BMD1JjZf7WA&t=1s)
 
 I use skeleton of [Tomer Ovadia](https://codepen.io/OTomer)
