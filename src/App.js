@@ -15,7 +15,7 @@ function App() {
         <div className='App'>
             <Header />
             <Switch location={location} key={location.pathname}>
-                <Route path='/news-platform' exact>
+                <Route path='/' exact>
                     <HomePage />
                 </Route>
                 <Route path='/news'>

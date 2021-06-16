@@ -6,6 +6,7 @@ Check [the analysis of solutions and the author's solution on Youtube](https://w
 
 The author's also got [the second test assignment](https://vk.com/@maxpfrontend-testovoe-zadanie-2)
 
+https://codepen.io/OTomer
 
 ### Usage
 ```

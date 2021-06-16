@@ -3,10 +3,32 @@
     flex-direction: column;
     align-items: flex-start;
 
+    &__part {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.2rem;
+
+        &_withWarn {
+            margin-bottom: 0.5rem;
+        }
+    }
+
     &__input {
         height: 2rem;
-        margin-bottom: 1rem;
         padding: 0rem 0.2rem;
+        border: none;
+        border-radius: 0.2rem;
+        border: 1px solid $grey;
+
+        &:invalid {
+            border-color: rgb(201, 75, 75);
+            color: rgb(201, 75, 75);
+        }
+    }
+
+    &__warn {
+        font-size: 0.7rem;
+        color: $red;
     }
 
     &__button {
@@ -17,5 +39,10 @@
         border: none;
         border-radius: 5%;
         text-transform: uppercase;
+
+        &:disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
     }
 }

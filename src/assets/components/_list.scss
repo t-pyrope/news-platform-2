@@ -1,0 +1,11 @@
+.list {
+    list-style: none;
+    padding: 0.5rem 0rem 1rem;
+    &__item {
+        margin-left: 1rem;
+    }
+
+    &_line {
+        display: flex;
+    }
+}

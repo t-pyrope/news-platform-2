@@ -23,6 +23,10 @@ body {
     color: $black;
 }
 
+button {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
     color: $green;
