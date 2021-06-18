@@ -6,8 +6,19 @@ const Page404 = () => {
 
     return (
         <main>
-            <h2>Page not found</h2>
-            <button onClick={() => history.goBack()}>Go Back </button>
+            <div className='article'>
+                <header className='article__header'>
+                    <h2>Page not found</h2>
+                </header>
+                <div className='article__body'>
+                    <button
+                        onClick={() => history.goBack()}
+                        className='button button_link'
+                    >
+                        Return
+                    </button>
+                </div>
+            </div>
         </main>
     );
 };
