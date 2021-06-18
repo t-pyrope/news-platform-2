@@ -1,29 +1,28 @@
-import { validateUrl } from '../api';
+import { getUserDataUrl } from '../api';
 import axios from 'axios';
 import convertErrMessage from '../helpers/convertErrMessage';
 
-export const loginAction = (params) => async (dispatch) => {
+const getUserData = (id) => async (dispatch) => {
     dispatch({
         type: 'IS_LOADING',
     });
     axios
-        .post(validateUrl, params, {
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-            },
-        })
+        .get(getUserDataUrl(id))
         .then((res) => {
             if (res.data.status === 'ok') {
                 dispatch({
-                    type: 'LOGIN_SUCCESS',
+                    type: 'GET_USER_DATA',
                     payload: {
-                        id: res.data.data.id,
+                        userId: res.data.data.userId,
+                        city: res.data.data.city,
+                        languages: res.data.data.languages,
+                        social: res.data.data.social,
                     },
                 });
             }
             if (res.data.status === 'err') {
                 dispatch({
-                    type: 'LOGIN_FAILURE',
+                    type: 'USER_DATA_FAILURE',
                     payload: {
                         errorMsg: convertErrMessage(res.data.message),
                     },
@@ -31,21 +30,14 @@ export const loginAction = (params) => async (dispatch) => {
             }
         })
         .catch((err) => {
+            console.error(err.message);
             dispatch({
-                type: 'LOGIN_FAILURE',
+                type: 'USER_DATA_FAILURE',
                 payload: {
-                    errorMsg: convertErrMessage(err.msg),
+                    errorMsg: convertErrMessage(err.message),
                 },
             });
         });
 };
 
-export const logOut = () => {
-    return {
-        type: 'LOG_OUT',
-    };
-};
-
-export const clearError = () => {
-    return { type: 'CLEAR_ERROR' };
-};
+export default getUserData;

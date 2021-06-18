@@ -27,6 +27,7 @@ const loginReducer = (state = initState, action) => {
                 id: null,
                 errorMsg: '',
                 isLogged: false,
+                isLoading: false,
             };
         case 'CLEAR_ERROR':
             return {

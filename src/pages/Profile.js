@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
-import { getUserDataUrl } from '../api';
-import axios from 'axios';
+import getUserData from '../actions/profileAction';
 import twitter from '../img/twitter.png';
 import twitch from '../img/twitch.png';
 import youtube from '../img/youtube.png';
 import telegram from '../img/telegram.png';
 import web from '../img/globe-grid.png';
 import vk from '../img/vk.png';
-import { handleError } from '../actions/loginAction';
 import ErrorMessage from '../components/ErrorMessage';
 import Skeleton from '../components/Skeleton';
 
 const Profile = () => {
-    const [userData, setUserData] = useState({
-        city: '',
-        languages: [],
-        social: [],
-    });
-
     const dispatch = useDispatch();
 
-    const { isLogged, id, errorMsg, isLoading } = useSelector(
-        (state) => state.user,
+    const { isLogged, id } = useSelector((state) => state.user);
+
+    const { city, languages, social, errorMsgProfile, isLoading } = useSelector(
+        (state) => state.profile,
     );
+
     const history = useHistory();
 
     useEffect(() => {
@@ -32,28 +27,8 @@ const Profile = () => {
     }, [history, isLogged]);
 
     useEffect(() => {
-        if (id) {
-            axios
-                .get(getUserDataUrl(id))
-                .then((res) => {
-                    if (res.data.status === 'ok') {
-                        localStorage.clear();
-                        localStorage.setItem(
-                            'userData',
-                            JSON.stringify(res.data.data),
-                        );
-                    }
-                    if (res.data.status === 'err') {
-                        dispatch(handleError(res.data.message));
-                    }
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
-            const data = JSON.parse(localStorage.getItem('userData'));
-            setUserData(data);
-        }
-    }, [setUserData, dispatch, id]);
+        if (id) dispatch(getUserData(id));
+    }, [dispatch, id]);
 
     const iconHandler = (social) => {
         switch (social) {
@@ -78,11 +53,11 @@ const Profile = () => {
                 <Skeleton />
             ) : (
                 <div>
-                    {errorMsg ? (
-                        <ErrorMessage msg={errorMsg} />
+                    {errorMsgProfile ? (
+                        <ErrorMessage msg={errorMsgProfile} />
                     ) : (
                         <div>
-                            {isLogged && userData && (
+                            {isLogged && city && (
                                 <div>
                                     <header className='page__header'>
                                         <h1>Welcome to your profile</h1>
@@ -91,13 +66,13 @@ const Profile = () => {
                                         </p>
                                     </header>
                                     <div className='article__paragraph'>
-                                        Город: {userData.city}
+                                        Город: {city}
                                     </div>
                                     <div>
                                         {' '}
                                         Знание языков:
                                         <ul className='list'>
-                                            {userData.languages.map((lang) => (
+                                            {languages.map((lang) => (
                                                 <li
                                                     key={lang}
                                                     className='list__item'
@@ -111,7 +86,7 @@ const Profile = () => {
                                         {' '}
                                         Ссылки:
                                         <ul className='list list_line'>
-                                            {userData.social.map((social) => (
+                                            {social.map((social) => (
                                                 <li
                                                     className='list__item'
                                                     key={social.label}
